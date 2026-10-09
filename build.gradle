@@ -1,17 +1,17 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 apply from: "config.gradle"
 buildscript {
-    ext.objectboxVersion = '1.2.1'
+    ext.objectboxVersion = '2.9.1'
     repositories {
         google()
+        mavenCentral()
         jcenter()
-        maven { url "http://objectbox.net/beta-repo/" }
+        maven { url "https://objectbox.io/beta-repo/" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:7.4.2'
         classpath "io.objectbox:objectbox-gradle-plugin:$objectboxVersion"
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -19,11 +19,11 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
-        mavenCentral() // add repository
-        maven { url "https://jitpack.io" }
         google()
-        maven { url "http://objectbox.net/beta-repo/" }
+        mavenCentral()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url "https://objectbox.io/beta-repo/" }
     }
 }
 
